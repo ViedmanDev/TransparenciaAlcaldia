@@ -1,254 +1,104 @@
-<!-- Aqui se hace la importación a traves de un link de la libreria swiper.js que permite generar slider automaticos con transiciones  -->
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatorio Ciudadanos de Transparencia</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <!-- Banner principal del sitio web -->
+    <div>
+        <img alt="Observatorio Ciudadanos de transparencia del espacio publico" class="banner" src="./imagenes/banner-noticias.png" />
+    </div>
 
-<!-- Aqui estaran definidos los estilos de nuestro sitio web -->
-<style type="text/css">
-
-/* El diseño del sitio web esta basado en Mobile first, por lo cual primero definiremos primero los estilos para mobile */
-
-/* Con el selector universal "*" lo que hacemos es formatear los estilos de todo el sitio web para evitar margenes o paddings que no esperabamos, y asi poder tener un control total sobre estos. */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilos del banner principal */
-.banner {
-    width: 100%;
-}
-
-/* Estilos slider automatico y manual */
-.sliderContainer {
-    width: 100%;
-    height: auto;
-    margin: 15px 0;
-}
-
-.swiper {
-    width: 100%;
-    height: auto;
-}
-
-.swiper-slide img {
-    width: 100%;
-}
-
-.swiper-slide img:hover {
-    cursor: pointer; /* Diseño del cursor, en este caso es un puntero e indica un enlace */
-}
-
-.swiper .swiper-button-prev, .swiper .swiper-button-next {
-    color: #fff; /* Color de los botones de vista previa y vista siguiente del slider */
-}
-
-.swiper-button-prev::after, .swiper-button-next::after {
-    width: 15px;
-    height: 15px;
-}
-
-.swiper .swiper-pagination-bullet-active {
-    background: #fff;
-}
-
-/* Estilos de las imagenes con sus respectivos textos */
-
-/* Creamos un contenedor que contenga todas las imagenes y textos, para poder aplicar propiedadesflex y acomodar cada uno de estos como mas nos convenga para un diseño responsive */
-.contenedorCuadros {
-    display: flex; /* Flex permite controlar el diseño y poder adaptar cada imagen a los diferentes dispositivos */
-    flex-direction: column; /* Permite a las imagenes posicionarse una debajo de la otra */
-    margin: auto;
-    width: 70%;
-    height: 70%;
-}
-
-
-/* Definimos los estilos para las imagenes, en este caso adoptan el 100% del ancho y alto de su contenedor padre "contenedorCuadros"*/
-.cuadro1, .cuadro2, .cuadro3, .cuadro4 {
-    width: 100%;
-    height: 100%;
-}
-
-/* Definimos los estilos del texto debajo de cada imagen */
-.textoCuadro1, .textoCuadro2 .textoCuadro3 .textoCuadro4 {
-    width: 100%;
-}
-
-/* Definimos los estilos del banner, en este caso un ancho del 100% del contenedor padre y un margin arriba de 15 px con respecto a las imagenes y los textos*/
-.bannerNoticias {
-    width: 100%;
-    margin-top: 15px;
-}
-
-/* Generamos una media querie que a partir de los 768px crea un breakpoint para adaptar el contenido de nuestro sitio web sobre pantallas de computadores */
-@media (min-width: 768px) {
-
-    .contenedorCuadros {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: 100%;
-        height: 100%;
-    }
-
-    .contenedorCuadro1, .contenedorCuadro2, .contenedorCuadro3, .contenedorCuadro4 {
-        width: 45%;
-        height: 25%;
-        display: inline-block;
-        margin: 0 auto;
-    }
-
-    .cuadro1, .cuadro2, .cuadro3, .cuadro4 {
-        width: 100%;
-        height: 100%;
-    }
-
-    .cuadro1:hover, .cuadro2:hover, .cuadro3:hover, .cuadro4:hover {
-        transform: scale(1.05);
-    }
-
-    .textoCuadro1, .textoCuadro2, .textoCuadro3, .textoCuadro4 {
-        width: 100%;
-        margin: 15px 0;
-    }
-
-/* Organizamos los tweets de manera que queden dos por fila y esten correctamente posicionados */
-    .contenedorNoticias {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
-    }
-}
-</style>
-
-
-<!-- Banner principal del sitio web -->
-<div>
-    <img alt="Observatorio Ciudadanos de transparencia del espacio publico" class="banner" src="https://i.imgur.com/dRxw1kc.png" />
-</div>
-
-<!-- Slider automatico y manual -->
-<div class="sliderContainer">
-
-    <!-- Contenedor principal del slider  -->
-    <div class="swiper">
-
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-                <a href="https://www.cali.gov.co/gobierno/publicaciones/169476/bulevar-del-oriente/" target="_blank">
-                    <img src="https://i.imgur.com/RqVRjWV.png" alt="Bulevar">
-                </a>
+    <!-- Slider automatico y manual -->
+    <div class="sliderContainer">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <a href="https://www.cali.gov.co/gobierno/publicaciones/169476/bulevar-del-oriente/" target="_blank">
+                        <img src="./imagenes/oct-bulevar.png" alt="Bulevar">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://www.cali.gov.co/gobierno/publicaciones/165383/parque-pacifico/" target="_blank">
+                        <img src="./imagenes/oct-parque pacifico.png" alt="Pacifico">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://www.cali.gov.co/gobierno/publicaciones/169474/parque-tecnologico-san-fernando/" target="_blank">
+                        <img src="./imagenes/oct- S. fernando.png" alt="San Fernando">
+                    </a>
+                </div>
             </div>
-            <div class="swiper-slide">
-                <a href="https://www.cali.gov.co/gobierno/publicaciones/165383/parque-pacifico/" target="_blank">
-                    <img src="https://i.imgur.com/kW3ISRB.png" alt="Pacifico">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="https://www.cali.gov.co/gobierno/publicaciones/169474/parque-tecnologico-san-fernando/" target="_blank">
-                    <img src="https://i.imgur.com/mZ8lqPr.png" alt="San Fernando">
-                </a>
-            </div>
+
+            <!-- Controles a traves de puntos -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Botones de navegacion -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-
-        <!-- Controles a traves de puntos -->
-        <div class="swiper-pagination"></div>
-
-        <!-- Botones de navegacion -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
-</div>
-
-<!-- Seccion principal del sitio que cuenta con las imagenes y texto descriptivo.  -->
-<div class="contenedorCuadros">
-
-    <!-- Cada imagen esta envuelta en un contenedor div, para asociarla con el texto y poder envolverla en una etiqueta ancla, asi nos permite que funcione todo como cajas y podamos manipularlas en el orden que queramos y con los margenes y tamaños requeridos -->
-    <div class="contenedorCuadro1">
-        <a href="https://www.cali.gov.co/gobierno/publicaciones/174072/Aprende/">
-            <img alt="Aprende" class="cuadro1" src="https://i.imgur.com/zUsabi1.png" />
-        </a>
-        <p class="textoCuadro1">Te gustara conocer las herramientas que tiene la ciudadana para estar informados, hacer seguimiento y velar por la transparencia en la gestin pública?</p>
     </div>
 
-    <div class="contenedorCuadro2">
-        <a href="https://www.cali.gov.co/gobierno/publicaciones/174074/Actua/">
-            <img alt="Actua" class="cuadro2" src="https://i.imgur.com/Wl3RZPJ.png" />
-        </a>
-        <p class="textoCuadro2">Para que el estado implemente un modelo de Gobierno Abierto, debe no solo garantizar el derecho de acceso a la información publica, sino tambien aplicar los principios de facilitacion, eficacia y divulgacion proactiva de la información</p>
+    <!-- Seccion principal del sitio que cuenta con las imagenes y texto descriptivo.  -->
+    <div class="contenedorCuadros">
+        <div class="contenedorCuadro1">
+            <a href="https://www.cali.gov.co/gobierno/publicaciones/174072/Aprende/">
+                <img alt="Aprende" class="cuadro1" src="./imagenes/aprende.png" />
+            </a>
+            <p class="textoCuadro1">Te gustara conocer las herramientas que tiene la ciudadana para estar informados, hacer seguimiento y velar por la transparencia en la gestin pública?</p>
+        </div>
+        <div class="contenedorCuadro2">
+            <a href="https://www.cali.gov.co/gobierno/publicaciones/174074/Actua/">
+                <img alt="Actua" class="cuadro2" src="./imagenes/actua.png" />
+            </a>
+            <p class="textoCuadro2">Para que el estado implemente un modelo de Gobierno Abierto, debe no solo garantizar el derecho de acceso a la información publica, sino tambien aplicar los principios de facilitacion, eficacia y divulgacion proactiva de la información</p>
+        </div>
+        <div class="contenedorCuadro3">
+            <a href="https://www.cali.gov.co/gobierno/publicaciones/174073/Conoce/">
+                <img alt="Conoce" class="cuadro3" src="./imagenes/conoce.png" />
+            </a>
+            <p class="textoCuadro3">En esta sección podras encontrar información acerca de las principales herramientas y rutas para la gestión de procesos relacionados con la observación ciudadana.</p>
+        </div>
+        <div class="contenedorCuadro4">
+            <a href="https://www.cali.gov.co/gobierno/publicaciones/174075/Agendate/">
+                <img alt="Agendate" class="cuadro4" src="./imagenes/agendate.png" />
+            </a>
+            <p class="textoCuadro4">En esta sección podras encontrar toda la información relacionada con las actividades y encuentros programadas por los Observatorios Ciudadanos de Transparencia en los nodos: Parque Pacifico, Parque Tecnologico de Innovacion San Fernando y Bulevar del Oriente.</p>
+        </div>
     </div>
 
-    <div class="contenedorCuadro3">
-        <a href="https://www.cali.gov.co/gobierno/publicaciones/174073/Conoce/">
-            <img alt="Conoce" class="cuadro3" src="https://i.imgur.com/5nRWPuG.png" />
-        </a>
-        <p class="textoCuadro3">En esta sección podras encontrar información acerca de las principales herramientas y rutas para la gestión de procesos relacionados con la observación ciudadana.</p>
+    <!-- Banner de noticias -->
+    <div>
+        <img alt="Noticias" class="bannerNoticias" src="./imagenes/banner-noticias.png" />
     </div>
 
-    <div class="contenedorCuadro4">
-        <a href="https://www.cali.gov.co/gobierno/publicaciones/174075/Agendate/">
-            <img alt="Agendate" class="cuadro4" src="https://i.imgur.com/A5dOtj8.png" />
-        </a>
-        <p class="textoCuadro4">En esta sección podras encontrar toda la información relacionada con las actividades y encuentros programadas por los Observatorios Ciudadanos de Transparencia en los nodos: Parque Pacifico, Parque Tecnologico de Innovacion San Fernando y Bulevar del Oriente.</p>
+    <!-- Noticias -->
+    <div class="contenedorNoticias">
+        <blockquote class="twitter-tweet">
+            <p dir="ltr" lang="es">Hoy, &quot;D&iacute;a de la Lucha Contra la Corrupci&oacute;n&quot;, ciudadan&iacute;a y servidores p&uacute;blicos comparten saberes y herramientas para luchar contra la corrupci&oacute;n.<a href="https://twitter.com/ProgramaJxT?ref_src=twsrc%5Etfw">@programaJxT</a><a href="https://twitter.com/UNODCROCOL?ref_src=twsrc%5Etfw">@UNODCROCOL</a> <a href="https://twitter.com/hashtag/T%C3%BAEresLaClaveDeLaTransparencia?src=hash&amp;ref_src=twsrc%5Etfw">#T&uacute;EresLaClaveDeLaTransparencia</a> <a href="https://t.co/h9JEObsmyo">pic.twitter.com/h9JEObsmyo</a></p>
+            &mdash; Secretar&iacute;a de Gobierno de Cali (@GobiernoCali) <a href="https://twitter.com/GobiernoCali/status/1601366502870949888?ref_src=twsrc%5Etfw">December 10, 2022</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <blockquote class="twitter-tweet">
+            <p dir="ltr" lang="es">Los directivos de Control Interno de la Alcald&iacute;a de Cali ?????????? se comprometen a integrar la Red Interinstitucional de Transparencia y Anticorrupci&oacute;n (RITA) para articular esfuerzos y trabajar por la transparencia en el ejercicio p&uacute;blico. ????????<a href="https://twitter.com/hashtag/TuEresLaClaveDeLaTransparencia?src=hash&amp;ref_src=twsrc%5Etfw">#TuEresLaClaveDeLaTransparencia</a> <a href="https://t.co/0hACM9ASmp">pic.twitter.com/0hACM9ASmp</a></p>
+            &mdash; Secretar&iacute;a de Gobierno de Cali (@GobiernoCali) <a href="https://twitter.com/GobiernoCali/status/1604974774958030850?ref_src=twsrc%5Etfw">December 19, 2022</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <blockquote class="twitter-tweet">
+            <p dir="ltr" lang="es">Desde la Oficina Asesora de Transparencia de <a href="https://twitter.com/GobiernoCali?ref_src=twsrc%5Etfw">@GobiernoCali</a> estamos consolidando la Red de Control Interno de Cali, un escenario estrat&eacute;gico y articulador para afianzar la transparencia en la gesti&oacute;n p&uacute;blica. ?????????? <a href="https://t.co/N2NEVvjDoD">pic.twitter.com/N2NEVvjDoD</a></p>
+            &mdash; Secretar&iacute;a de Gobierno de Cali (@GobiernoCali) <a href="https://twitter.com/GobiernoCali/status/1600252005393440770?ref_src=twsrc%5Etfw">December 6, 2022</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-</div>
 
-<!-- Banner de noticias -->
-<div>
-    <img alt="Noticias" class="bannerNoticias" src="https://i.imgur.com/3VauH68.png" />
-</div>
-
-<!-- Noticias -->
-<div class="contenedorNoticias">
-
-<blockquote class="twitter-tweet">
-<p dir="ltr" lang="es">Hoy, &quot;D&iacute;a de la Lucha Contra la Corrupci&oacute;n&quot;, ciudadan&iacute;a y servidores p&uacute;blicos comparten saberes y herramientas para luchar contra la corrupci&oacute;n.<a href="https://twitter.com/ProgramaJxT?ref_src=twsrc%5Etfw">@programaJxT</a><a href="https://twitter.com/UNODCROCOL?ref_src=twsrc%5Etfw">@UNODCROCOL</a> <a href="https://twitter.com/hashtag/T%C3%BAEresLaClaveDeLaTransparencia?src=hash&amp;ref_src=twsrc%5Etfw">#T&uacute;EresLaClaveDeLaTransparencia</a> <a href="https://t.co/h9JEObsmyo">pic.twitter.com/h9JEObsmyo</a></p>
-&mdash; Secretar&iacute;a de Gobierno de Cali (@GobiernoCali) <a href="https://twitter.com/GobiernoCali/status/1601366502870949888?ref_src=twsrc%5Etfw">December 10, 2022</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet">
-<p dir="ltr" lang="es">Los directivos de Control Interno de la Alcald&iacute;a de Cali ?????????? se comprometen a integrar la Red Interinstitucional de Transparencia y Anticorrupci&oacute;n (RITA) para articular esfuerzos y trabajar por la transparencia en el ejercicio p&uacute;blico. ????????<a href="https://twitter.com/hashtag/TuEresLaClaveDeLaTransparencia?src=hash&amp;ref_src=twsrc%5Etfw">#TuEresLaClaveDeLaTransparencia</a> <a href="https://t.co/0hACM9ASmp">pic.twitter.com/0hACM9ASmp</a></p>
-&mdash; Secretar&iacute;a de Gobierno de Cali (@GobiernoCali) <a href="https://twitter.com/GobiernoCali/status/1604974774958030850?ref_src=twsrc%5Etfw">December 19, 2022</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet">
-<p dir="ltr" lang="es">Desde la Oficina Asesora de Transparencia de <a href="https://twitter.com/GobiernoCali?ref_src=twsrc%5Etfw">@GobiernoCali</a> estamos consolidando la Red de Control Interno de Cali, un escenario estrat&eacute;gico y articulador para afianzar la transparencia en la gesti&oacute;n p&uacute;blica. ?????????? <a href="https://t.co/N2NEVvjDoD">pic.twitter.com/N2NEVvjDoD</a></p>
-&mdash; Secretar&iacute;a de Gobierno de Cali (@GobiernoCali) <a href="https://twitter.com/GobiernoCali/status/1600252005393440770?ref_src=twsrc%5Etfw">December 6, 2022</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet">
-<p dir="ltr" lang="es">Desde la Oficina Asesora de Transparencia de <a href="https://twitter.com/GobiernoCali?ref_src=twsrc%5Etfw">@GobiernoCali</a> estamos consolidando la Red de Control Interno de Cali, un escenario estrat&eacute;gico y articulador para afianzar la transparencia en la gesti&oacute;n p&uacute;blica. ?????????? <a href="https://t.co/N2NEVvjDoD">pic.twitter.com/N2NEVvjDoD</a></p>
-&mdash; Secretar&iacute;a de Gobierno de Cali (@GobiernoCali) <a href="https://twitter.com/GobiernoCali/status/1600252005393440770?ref_src=twsrc%5Etfw">December 6, 2022</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-<!-- Inicializamos Swiper en Js -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script>
-    const swiper = new Swiper('.swiper', {
-    //Parametros opcionales
-    autoplay: {
-        delay: 5000, //Definimos cada cuantos segundos el slider cambia de imagen
-        disableOnInteraction: false,
-    },
-    loop: true,
-
-    // Control a traves de puntos
-    pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    },
-
-    // Flechas de navegacion
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    },
-    });
-</script>
-<p>&nbsp;</p>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
